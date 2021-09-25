@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+Manage Inventory
+{% endblock %}
+{% block content %}
+    <div class="container text-center">
+        <form method="POST" class="form-signin", style="color: white;">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://icon-library.com/images/psyduck-icon/psyduck-icon-5.jpg" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Add your items!
+            </h1>
+            <br>
+                {{ form.name.label() }}
+                {{ form.name(class="form-control", placeholder="Product Name") }}
+
+                {{ form.description.label() }}
+                {{ form.description(class="form-control", placeholder="Description") }}
+
+                {{ form.price.label() }}
+                {{ form.price(class="form-control", placeholder="Price") }}
+
+                {{ form.barcode.label() }}
+                {{ form.barcode(class="form-control", disabled="disabled", placeholder="Barcode") }}
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+{% endblock %}
